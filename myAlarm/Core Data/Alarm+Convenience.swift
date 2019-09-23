@@ -9,7 +9,7 @@
 import CoreData
 
 extension Alarm {
-    convenience init(fireDate: Date, name: String, enable: Bool, fireTimeAsString: String, uuid: String = UUID().uuidString, context: NSManagedObjectContext = CoreDataStack.shared.mainContext){
+    convenience init(fireDate: Date, name: String, enable: Bool, uuid: String = UUID().uuidString, context: NSManagedObjectContext = CoreDataStack.shared.mainContext){
         self.init(context: context)
         self.name = name
         self.fireDate = fireDate
