@@ -52,6 +52,7 @@
 		F7C2038A2131AD3400C3FC77 /* myAlarm */ = {
 			isa = PBXGroup;
 			children = (
+				F7C2038F2131AD3400C3FC77 /* Main.storyboard */,
 				F7C203AA2131B1F600C3FC77 /* Resources */,
 				F7C203A92131B1E300C3FC77 /* Views */,
 				F7C203A72131B1D500C3FC77 /* Models */,
@@ -85,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				F7C2038B2131AD3400C3FC77 /* AppDelegate.swift */,
-				F7C2038F2131AD3400C3FC77 /* Main.storyboard */,
 				F7C203922131AD3400C3FC77 /* Assets.xcassets */,
 				F7C203942131AD3400C3FC77 /* LaunchScreen.storyboard */,
 				F7C203972131AD3400C3FC77 /* Info.plist */,
