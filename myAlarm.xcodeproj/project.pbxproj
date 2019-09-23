@@ -51,6 +51,21 @@
 			path = "Core Data";
 			sourceTree = "<group>";
 		};
+		1B08980A2339536F006327DB /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				F7C2038F2131AD3400C3FC77 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		1B08980B2339537A006327DB /* TableView Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "TableView Controller";
+			sourceTree = "<group>";
+		};
 		F7C2037F2131AD3400C3FC77 = {
 			isa = PBXGroup;
 			children = (
@@ -70,7 +85,8 @@
 		F7C2038A2131AD3400C3FC77 /* myAlarm */ = {
 			isa = PBXGroup;
 			children = (
-				F7C2038F2131AD3400C3FC77 /* Main.storyboard */,
+				1B08980B2339537A006327DB /* TableView Controller */,
+				1B08980A2339536F006327DB /* Storyboard */,
 				F7C203AA2131B1F600C3FC77 /* Resources */,
 				F7C203A92131B1E300C3FC77 /* View controllers */,
 				F7C203A82131B1DB00C3FC77 /* Controllers */,
