@@ -6,4 +6,24 @@
 //  Copyright © 2019 trevorAdcock. All rights reserved.
 //
 
-import Foundation
+import CoreData
+
+extension Alarm {
+    convenience init(name: String, fireDate: Date, uuid: String, enable: Bool, fireTimeAsString: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext){
+        self.init(context: context)
+        self.name = name
+        self.fireDate = fireDate
+        self.uuid  = uuid
+        self.enable = enable
+        
+        var dateASaString: String {
+            let formatter = DateFormatter()
+            formatter.timeStyle = .medium
+            formatter.timeZone = .autoupdatingCurrent
+            let dateAsAString = formatter.string(from: fireDate)
+            return dateAsAString
+        }
+        
+        self.fireTimeAsString = dateASaString
+    }
+}
