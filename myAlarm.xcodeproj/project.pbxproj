@@ -68,8 +68,8 @@
 		1B08980B2339537A006327DB /* TableView Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1B08981123395C2A006327DB /* AlarmDetailTableViewController.swift */,
 				1B08980C233953CF006327DB /* AlarmListTableViewController.swift */,
+				1B08981123395C2A006327DB /* AlarmDetailTableViewController.swift */,
 				1B08980E233958A7006327DB /* Table View Cell */,
 			);
 			path = "TableView Controller";

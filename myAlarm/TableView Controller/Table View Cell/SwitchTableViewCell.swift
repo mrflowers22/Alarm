@@ -16,6 +16,7 @@ class SwitchTableViewCell: UITableViewCell {
     var alarm: Alarm?
     
     @IBAction func switchValueChanged(_ sender: UISwitch) {
+        
     }
     
     
