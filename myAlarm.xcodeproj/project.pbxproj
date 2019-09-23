@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B08980223393F22006327DB /* myAlarm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B08980023393F22006327DB /* myAlarm.xcdatamodeld */; };
+		1B08980523393FCA006327DB /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B08980423393FCA006327DB /* CoreDataStack.swift */; };
+		1B08980723394098006327DB /* Alarm+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B08980623394098006327DB /* Alarm+Convenience.swift */; };
 		F7C2038C2131AD3400C3FC77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C2038B2131AD3400C3FC77 /* AppDelegate.swift */; };
 		F7C203912131AD3400C3FC77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C2038F2131AD3400C3FC77 /* Main.storyboard */; };
 		F7C203932131AD3400C3FC77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7C203922131AD3400C3FC77 /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B08980123393F22006327DB /* myAlarm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myAlarm.xcdatamodel; sourceTree = "<group>"; };
+		1B08980423393FCA006327DB /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		1B08980623394098006327DB /* Alarm+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+Convenience.swift"; sourceTree = "<group>"; };
 		F7C203882131AD3400C3FC77 /* myAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C2038B2131AD3400C3FC77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7C203902131AD3400C3FC77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -33,6 +39,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B08980323393F2B006327DB /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				1B08980023393F22006327DB /* myAlarm.xcdatamodeld */,
+				1B08980423393FCA006327DB /* CoreDataStack.swift */,
+				1B08980623394098006327DB /* Alarm+Convenience.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
 		F7C2037F2131AD3400C3FC77 = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +73,7 @@
 				F7C203A92131B1E300C3FC77 /* Views */,
 				F7C203A72131B1D500C3FC77 /* Models */,
 				F7C203A82131B1DB00C3FC77 /* Controllers */,
+				1B08980323393F2B006327DB /* Core Data */,
 			);
 			path = myAlarm;
 			sourceTree = "<group>";
@@ -164,7 +181,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B08980523393FCA006327DB /* CoreDataStack.swift in Sources */,
 				F7C2038C2131AD3400C3FC77 /* AppDelegate.swift in Sources */,
+				1B08980223393F22006327DB /* myAlarm.xcdatamodeld in Sources */,
+				1B08980723394098006327DB /* Alarm+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +382,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1B08980023393F22006327DB /* myAlarm.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1B08980123393F22006327DB /* myAlarm.xcdatamodel */,
+			);
+			currentVersion = 1B08980123393F22006327DB /* myAlarm.xcdatamodel */;
+			path = myAlarm.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F7C203802131AD3400C3FC77 /* Project object */;
 }
