@@ -17,8 +17,9 @@ class AlarmController {
     var alarms: [Alarm] = []
     
     //MARK: - CRUD
-    func createAlarm(fireDate: Date, name: String, enabled: Bool) 
+    func createAlarm(fireDate: Date, name: String, enabled: Bool) {
+        
+    }
     
     //MARK: - Persistence
 }
-let alarm = Alarm(name: <#T##String#>, fireDate: <#T##Date#>, uuid: <#T##String#>, enable: <#T##Bool#>, fireTimeAsString: <#T##String#>)
