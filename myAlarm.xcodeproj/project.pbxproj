@@ -11,6 +11,7 @@
 		1B08980523393FCA006327DB /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B08980423393FCA006327DB /* CoreDataStack.swift */; };
 		1B08980723394098006327DB /* Alarm+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B08980623394098006327DB /* Alarm+Convenience.swift */; };
 		1B089809233943C1006327DB /* AlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B089808233943C1006327DB /* AlarmController.swift */; };
+		1B08980D233953CF006327DB /* AlarmListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B08980C233953CF006327DB /* AlarmListTableViewController.swift */; };
 		F7C2038C2131AD3400C3FC77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C2038B2131AD3400C3FC77 /* AppDelegate.swift */; };
 		F7C203912131AD3400C3FC77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C2038F2131AD3400C3FC77 /* Main.storyboard */; };
 		F7C203932131AD3400C3FC77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7C203922131AD3400C3FC77 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		1B08980423393FCA006327DB /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1B08980623394098006327DB /* Alarm+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+Convenience.swift"; sourceTree = "<group>"; };
 		1B089808233943C1006327DB /* AlarmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlarmController.swift; path = "myAlarm/Core Data/AlarmController.swift"; sourceTree = SOURCE_ROOT; };
+		1B08980C233953CF006327DB /* AlarmListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListTableViewController.swift; sourceTree = "<group>"; };
 		F7C203882131AD3400C3FC77 /* myAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C2038B2131AD3400C3FC77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7C203902131AD3400C3FC77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		1B08980B2339537A006327DB /* TableView Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1B08980C233953CF006327DB /* AlarmListTableViewController.swift */,
 			);
 			path = "TableView Controller";
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B08980523393FCA006327DB /* CoreDataStack.swift in Sources */,
+				1B08980D233953CF006327DB /* AlarmListTableViewController.swift in Sources */,
 				1B089809233943C1006327DB /* AlarmController.swift in Sources */,
 				F7C2038C2131AD3400C3FC77 /* AppDelegate.swift in Sources */,
 				1B08980223393F22006327DB /* myAlarm.xcdatamodeld in Sources */,
