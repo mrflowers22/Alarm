@@ -72,19 +72,11 @@
 			children = (
 				F7C2038F2131AD3400C3FC77 /* Main.storyboard */,
 				F7C203AA2131B1F600C3FC77 /* Resources */,
-				F7C203A92131B1E300C3FC77 /* Views */,
-				F7C203A72131B1D500C3FC77 /* Models */,
+				F7C203A92131B1E300C3FC77 /* View controllers */,
 				F7C203A82131B1DB00C3FC77 /* Controllers */,
 				1B08980323393F2B006327DB /* Core Data */,
 			);
 			path = myAlarm;
-			sourceTree = "<group>";
-		};
-		F7C203A72131B1D500C3FC77 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		F7C203A82131B1DB00C3FC77 /* Controllers */ = {
@@ -95,11 +87,11 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		F7C203A92131B1E300C3FC77 /* Views */ = {
+		F7C203A92131B1E300C3FC77 /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Views;
+			path = "View controllers";
 			sourceTree = "<group>";
 		};
 		F7C203AA2131B1F600C3FC77 /* Resources */ = {
