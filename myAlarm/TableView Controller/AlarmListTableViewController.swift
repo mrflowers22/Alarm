@@ -37,18 +37,18 @@ class AlarmListTableViewController: UITableViewController,  NSFetchedResultsCont
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-//        return AlarmController.sharedInstance.alarms.count
-        return fetchedResultsController.fetchedObjects?.count ?? 0
+        return AlarmController.sharedInstance.alarms.count
+//        return fetchedResultsController.fetchedObjects?.count ?? 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath)
-//        let alarm = AlarmController.sharedInstance.alarms[indexPath.row]
-        let alarm = fetchedResultsController.object(at: indexPath)
-        cell.textLabel?.text = alarm.fireTimeAsString
-        cell.detailTextLabel?.text = alarm.name
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as!  SwitchTableViewCell
+        let alarm = AlarmController.sharedInstance.alarms[indexPath.row]
+//        let alarm = fetchedResultsController.object(at: indexPath)
+//        cell.textLabel?.text = alarm.fireTimeAsString
+//        cell.detailTextLabel?.text = alarm.name
+        cell.alarm = alarm
         // Configure the cell...
         return cell
     }
@@ -71,8 +71,26 @@ class AlarmListTableViewController: UITableViewController,  NSFetchedResultsCont
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "cellSelected" {
+            guard let destinationVC = segue.destination as? AlarmDetailTableViewController, let index = tableView.indexPathForSelectedRow else { return }
+            let alarmToPass = AlarmController.sharedInstance.alarms[index.row]
+            destinationVC.alarm = alarmToPass
+        }
+        
     }
+}
 
+extension AlarmListTableViewController: SwitchTableViewCellDelegate {
+    func switchCellSwitchValueChanged(cell: SwitchTableViewCell) {
+        //find the index of the cell that was selected
+        guard let index = tableView.indexPath(for: cell) else { return }
+        //find the model at the index
+        let alarmToToggle = AlarmController.sharedInstance.alarms[index.row]
+        //toggle the model at the cell
+        AlarmController.sharedInstance.toggleEnabled(for: alarmToToggle)
+        //reload the table view
+        tableView.reloadData()
+    }
+    
+    
 }

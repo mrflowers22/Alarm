@@ -15,13 +15,25 @@ class AlarmController {
     static let sharedInstance = AlarmController()
     
     //create data source of truth
-    var alarms: [Alarm] {
-        return loadFromPersistentStore()
+//    var alarms: [Alarm] {
+//        return loadFromPersistentStore()
+//    }
+    var alarms: [Alarm] = []
+    var mockAlarms: [Alarm] {
+        let a = Alarm(fireDate: Date(timeIntervalSince1970: 665577), name: "first alarm", enabled: false)
+        let b = Alarm(fireDate: Date(timeIntervalSinceNow: -8887776), name: "Second alarm", enabled: true)
+        let c = Alarm(fireDate: Date(), name: "Third alarm", enabled: false)
+        let d = Alarm(fireDate: Date(), name: "Fourth and final alarm", enabled: true)
+        return [a, b, c, d]
+    }
+    
+    init(){
+        alarms = mockAlarms
     }
     
     //MARK: - CRUD
     func createAlarm(fireDate: Date, name: String, enabled: Bool) {
-    let _ = Alarm(fireDate: fireDate, name: name, enable: enabled)
+    let _ = Alarm(fireDate: fireDate, name: name, enabled: enabled)
        
         //saveToPersistentStore
         saveToPersistentStore()
@@ -30,7 +42,7 @@ class AlarmController {
     func update(alarm: Alarm, fireDate newFireDate: Date, name newName: String, enabled newEnabled: Bool){
         alarm.fireDate = newFireDate
         alarm.name = newName
-        alarm.enable = newEnabled
+        alarm.enabled = newEnabled
         saveToPersistentStore()
     }
     
@@ -39,6 +51,10 @@ class AlarmController {
 //        alarms.remove(at: indexOfAlarm)
         let moc = CoreDataStack.shared.mainContext
         moc.delete(alarm)
+    }
+    
+    func toggleEnabled(for alarm: Alarm){
+        alarm.enabled = !alarm.enabled
     }
     
     //MARK: - Persistence

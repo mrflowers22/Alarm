@@ -9,12 +9,12 @@
 import CoreData
 
 extension Alarm {
-    convenience init(fireDate: Date, name: String, enable: Bool, uuid: String = UUID().uuidString, context: NSManagedObjectContext = CoreDataStack.shared.mainContext){
+    convenience init(fireDate: Date, name: String, enabled: Bool, uuid: String = UUID().uuidString, context: NSManagedObjectContext = CoreDataStack.shared.mainContext){
         self.init(context: context)
         self.name = name
         self.fireDate = fireDate
         self.uuid  = uuid
-        self.enable = enable
+        self.enabled = enabled
         var dateASaString: String {
             let formatter = DateFormatter()
             formatter.timeStyle = .medium
