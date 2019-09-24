@@ -14,7 +14,7 @@ class AlarmListTableViewController: UITableViewController,  NSFetchedResultsCont
     lazy var fetchedResultsController: NSFetchedResultsController<Alarm> =  {
         //1. set up the fetch request
         let fetchRequest: NSFetchRequest<Alarm> = Alarm.fetchRequest()
-        //2. set up sortDiscriptors - Optional
+        //2. set up sortDiscriptors - MANDATORY
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         //3. get the moc
         let moc = CoreDataStack.shared.mainContext
@@ -74,6 +74,7 @@ class AlarmListTableViewController: UITableViewController,  NSFetchedResultsCont
 //            let alarmToDelete = AlarmController.sharedInstance.alarms[indexPath.row]
            let alarmToDelete = fetchedResultsController.object(at: indexPath) 
             AlarmController.sharedInstance.delete(alarm: alarmToDelete)
+            
             // Delete the row from the data source
 //            tableView.deleteRows(at: [indexPath], with: .fade)
         }

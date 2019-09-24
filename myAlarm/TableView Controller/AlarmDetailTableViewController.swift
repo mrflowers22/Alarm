@@ -12,7 +12,7 @@ class AlarmDetailTableViewController: UITableViewController, AlarmScheduler {
 
     var alarm: Alarm? {
         didSet {
-           // loadViewIfNeeded()
+            loadViewIfNeeded()
             updateViews()
         }
     }
@@ -35,7 +35,8 @@ class AlarmDetailTableViewController: UITableViewController, AlarmScheduler {
             return }
         datePicker.setDate(fireDate, animated: true)
         nameTextField.text = passedInAlarm.name
-        enableButtonProperties.setTitle(alarmIsOn ? "Off" : "On", for: .normal)
+        enableButtonProperties.setTitle(passedInAlarm.enabled ? "Off" : "On", for: .normal)
+        enableButtonProperties.backgroundColor = passedInAlarm.enabled ? .red : .green
     }
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
@@ -57,6 +58,10 @@ class AlarmDetailTableViewController: UITableViewController, AlarmScheduler {
     
     @IBAction func enableButtonTapped(_ sender: UIButton) {
         guard let passedInAlarm = alarm else { print("Error right here for alarm"); return }
+        
+        //this works but it violates MVC 
+        AlarmController.sharedInstance.toggleEnabled(for: passedInAlarm)
+        
         if passedInAlarm.enabled {
             scheduleUserNotifications(for: passedInAlarm)
         } else {
@@ -64,8 +69,6 @@ class AlarmDetailTableViewController: UITableViewController, AlarmScheduler {
         }
         
         updateViews()
-        //this would work but it would violate MVC adopt the alarmScheduler protocol
-//        AlarmController.sharedInstance.toggleEnabled(for: passedInAlarm)
         
     }
 
