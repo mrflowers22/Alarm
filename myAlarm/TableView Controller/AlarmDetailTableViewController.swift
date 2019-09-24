@@ -12,7 +12,7 @@ class AlarmDetailTableViewController: UITableViewController {
 
     var alarm: Alarm? {
         didSet {
-            loadViewIfNeeded()
+           // loadViewIfNeeded()
             updateViews()
         }
     }
@@ -26,25 +26,30 @@ class AlarmDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateViews()
     }
     
     private func updateViews(){
-        guard let passedInAlarm = alarm, let fireDate = passedInAlarm.fireDate else { return }
+        guard let passedInAlarm = alarm, isViewLoaded, let fireDate = passedInAlarm.fireDate else {
+            self.title = "Please select a date."
+            return }
         datePicker.setDate(fireDate, animated: true)
         nameTextField.text = passedInAlarm.name
-        enableButtonProperties.setTitle(passedInAlarm.enabled ? "Off" : "On", for: .normal)
+        enableButtonProperties.setTitle(alarmIsOn ? "Off" : "On", for: .normal)
     }
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         guard let name = nameTextField.text, !name.isEmpty else { return }
+    
         if let passedInAlarm = alarm {
             //update
+        
             self.title = passedInAlarm.name
+            print("\(datePicker.date)")
+            
             AlarmController.sharedInstance.update(alarm: passedInAlarm, fireDate: datePicker.date, name: name, enabled: passedInAlarm.enabled)
             
         } else {
-            self.title = "Please select a date."
             AlarmController.sharedInstance.createAlarm(fireDate: datePicker.date, name: name, enabled: alarmIsOn)
         }
         self.navigationController?.popToRootViewController(animated: true)
@@ -52,6 +57,7 @@ class AlarmDetailTableViewController: UITableViewController {
     
     @IBAction func enableButtonTapped(_ sender: UIButton) {
         
+
     }
 
 }

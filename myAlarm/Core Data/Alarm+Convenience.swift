@@ -17,8 +17,8 @@ extension Alarm {
         self.enabled = enabled
         var dateASaString: String {
             let formatter = DateFormatter()
-            formatter.timeStyle = .medium
-            formatter.timeZone = .autoupdatingCurrent
+            formatter.timeStyle = .short
+//            formatter.timeZone = .autoupdatingCurrent
             let dateAsAString = formatter.string(from: fireDate)
             return dateAsAString
         }

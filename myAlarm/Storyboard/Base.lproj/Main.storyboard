@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Alarm List-->
         <scene sceneID="zp8-yx-M6U">
             <objects>
                 <tableViewController id="ihV-BD-jdA" customClass="AlarmListTableViewController" customModule="myAlarm" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,7 +71,7 @@
                             <outlet property="delegate" destination="ihV-BD-jdA" id="ysE-hs-AmC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="kzN-Bl-4Ck">
+                    <navigationItem key="navigationItem" title="Alarm List" id="kzN-Bl-4Ck">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NEm-6r-j8D">
                             <connections>
                                 <segue destination="FNG-Yq-ZbW" kind="show" id="Frg-ku-hn1"/>
@@ -101,7 +101,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="225.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="BvR-Vd-TWo">
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="BvR-Vd-TWo">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="225.66666666666666"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="590962766.14069295">
                                                         <!--2019-09-23 20:19:26 +0000-->

@@ -28,11 +28,10 @@ class SwitchTableViewCell: UITableViewCell {
         delegate?.switchCellSwitchValueChanged(cell: self)
     }
     
-    private func updateViews(){
+     func updateViews(){
         guard let passedInAlarm = alarm else { return }
         timeLabel.text = passedInAlarm.fireTimeAsString
         nameLabel.text = passedInAlarm.name
         alarmSwitch.isOn = passedInAlarm.enabled
     }
-    
 }
