@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlarmDetailTableViewController: UITableViewController {
+class AlarmDetailTableViewController: UITableViewController, AlarmScheduler {
 
     var alarm: Alarm? {
         didSet {
@@ -56,8 +56,17 @@ class AlarmDetailTableViewController: UITableViewController {
     }
     
     @IBAction func enableButtonTapped(_ sender: UIButton) {
+        guard let passedInAlarm = alarm else { print("Error right here for alarm"); return }
+        if passedInAlarm.enabled {
+            scheduleUserNotifications(for: passedInAlarm)
+        } else {
+            cancelUserNotifications(for: passedInAlarm)
+        }
         
-
+        updateViews()
+        //this would work but it would violate MVC adopt the alarmScheduler protocol
+//        AlarmController.sharedInstance.toggleEnabled(for: passedInAlarm)
+        
     }
 
 }

@@ -54,8 +54,6 @@ class AlarmController {
     //create singleton
     static let sharedInstance = AlarmController()
     
-    weak var delegate: AlarmScheduler?
-    
     //create data source of truth
     var alarms: [Alarm] {
         return loadFromPersistentStore()
@@ -81,7 +79,7 @@ class AlarmController {
 //        alarms.remove(at: indexOfAlarm)
         let moc = CoreDataStack.shared.mainContext
         moc.delete(alarm)
-        delegate?.cancelUserNotifications(for: alarm)
+        cancelUserNotifications(for: alarm)
         saveToPersistentStore()
     }
     
@@ -89,9 +87,9 @@ class AlarmController {
         alarm.enabled = !alarm.enabled
         
         if alarm.enabled {
-            delegate?.scheduleUserNotifications(for: alarm)
+            scheduleUserNotifications(for: alarm)
         } else {
-            delegate?.cancelUserNotifications(for: alarm)
+            cancelUserNotifications(for: alarm)
         }
         
         saveToPersistentStore()
