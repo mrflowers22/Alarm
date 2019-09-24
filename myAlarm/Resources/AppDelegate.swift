@@ -29,26 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
         }
         
-//        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
-//            //do not schedule notifications if not authorized
-//            guard settings.authorizationStatus == .authorized else  {  return  }
-//            if settings.alertSetting == .enabled {
-//                //schedule an alert-only notification
-//                self.myScheduledAlertNotification()
-//            } else {
-//                //schdule
-//            }
-//        }
-        
-
         UNUserNotificationCenter.current().delegate = self
         
         return true
     }
 
-//    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-//        completionHandler([.alert, .sound])
-//    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+    }
 
 }
 

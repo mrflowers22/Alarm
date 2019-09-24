@@ -54,6 +54,8 @@ class AlarmController {
     //create singleton
     static let sharedInstance = AlarmController()
     
+    weak var delegate: AlarmScheduler?
+    
     //create data source of truth
     var alarms: [Alarm] {
         return loadFromPersistentStore()
@@ -79,11 +81,19 @@ class AlarmController {
 //        alarms.remove(at: indexOfAlarm)
         let moc = CoreDataStack.shared.mainContext
         moc.delete(alarm)
+        delegate?.cancelUserNotifications(for: alarm)
         saveToPersistentStore()
     }
     
     func toggleEnabled(for alarm: Alarm){
         alarm.enabled = !alarm.enabled
+        
+        if alarm.enabled {
+            delegate?.scheduleUserNotifications(for: alarm)
+        } else {
+            delegate?.cancelUserNotifications(for: alarm)
+        }
+        
         saveToPersistentStore()
     }
     
@@ -112,5 +122,5 @@ class AlarmController {
 }
 
 extension AlarmController: AlarmScheduler {
-    //Conform you AlarmController Class  to the AlasrmScheduler protocol. Notice how the compiler does not make you implement the schedule and cancel functions from the protocol. This is because by adding an extension to the protocol, we have created default implementation of these functions for all classes that confrom to the protocol. 
+    //Conform you AlarmController Class  to the AlasrmScheduler protocol. Notice how the compiler does not make you implement the schedule and cancel functions from the protocol. This is because by adding an extension to the protocol, we have created default implementation of these functions for all classes that confrom to the protocol.
 }
